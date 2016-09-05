@@ -1,20 +1,18 @@
 var angular = require('angular');
-
-var techsModule = require('./app/techs/index');
 require('angular-ui-router');
 var routesConfig = require('./routes');
 
-var main = require('./app/main');
-var header = require('./app/header');
-var title = require('./app/title');
-var footer = require('./app/footer');
+var login = require('./app/login/login');
+var signup = require('./app/signup/signup');
+var header = require('./app/core/header');
+var footer = require('./app/core/footer');
 
 require('./index.scss');
 
 angular
-  .module('app', [techsModule, 'ui.router'])
+  .module('app', ['ui.router'])
   .config(routesConfig)
-  .component('app', main)
-  .component('fountainHeader', header)
-  .component('fountainTitle', title)
-  .component('fountainFooter', footer);
+  .component('appHeader', header)
+  .component('appFooter', footer)
+  .component('login', login)
+  .component('signup', signup);
