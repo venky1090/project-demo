@@ -1,1 +1,74 @@
-signupsignupsignupsignup
+
+<div>
+	<div class="signup-wrap container-fluid">
+		<div class="title">
+			<h2>Register</h2>
+			<div class="clear"></div>
+		</div>
+		<div class="register">
+		  <form class="form-inline" name="regForm" ng-submit="regForm.$valid && $ctrl.register($ctrl.user)" novalidate>
+			<div class="form-group first-name">
+			  <label class="sr-only" for="firstname">First Name</label>
+			  <div class="input-group">
+				<input type="text" class="form-control" name="firstname" id="firstname" ng-model="$ctrl.user.firstname" placeholder="First Name" required>
+       </div>
+      <p ng-show="regForm.firstname.$invalid && regForm.firstname.$dirty && !regForm.firstname.$focused" class="error">{{$ctrl.invalidFirstName}}</p>
+
+			</div>
+        <div class="form-group last-name">
+  			  <label class="sr-only" for="lastname">Last Name</label>
+  			  <div class="input-group">
+  				<input type="text" class="form-control" name="lastname" id="lastname" ng-model="$ctrl.user.lastname" placeholder="Last Name">
+  			  </div>
+          <p ng-show="regForm.lastname.$invalid && regForm.lastname.$dirty && !regForm.lastname.$focused" class="error">{{$ctrl.invalidLastName}}</p>
+
+  			</div>
+        <div class="form-group dob">
+          <label class="sr-only" for="dob">Date of Birth</label>
+          <div class="input-group">
+          <input type="date" class="form-control" name="dob" id="dob" ng-model="$ctrl.user.dob" placeholder="Date of Birth" required>
+          </div>
+          <p ng-show="regForm.dob.$invalid && regForm.dob.$dirty && !regForm.dob.$focused" class="error">{{$ctrl.invalidDOB}}</p>
+
+        </div>
+			<div class="form-group phone">
+			  <label class="sr-only" for="phone">Phone</label>
+			  <div class="input-group">
+					<input type="tel" class="form-control" ng-pattern="/^\d+$/" maxlength="10" name="phone" id="phone" ng-model="$ctrl.user.mobile" placeholder="Mobile Number" required>
+        </div>
+        <p ng-show="regForm.phone.$invalid && regForm.phone.$dirty && !regForm.phone.$focused" class="error">{{$ctrl.invalidMobile}}</p>
+    		</div>
+			<div class="form-group email">
+			  <label class="sr-only" for="email">Email</label>
+			  <div class="input-group">
+				<input type="text" class="form-control" ng-pattern="$ctrl.emailReg" name="email" id="email" ng-model="$ctrl.user.email" placeholder="Email" required>
+			  </div>
+        <p ng-show="regForm.email.$invalid && regForm.email.$dirty && !regForm.email.$focused &&!regForm.email.$error.pattern" class="error">{{$ctrl.reqEmail}}</p>
+				<p ng-show="regForm.email.$error.pattern" class="error">{{$ctrl.invalidEmail}}</p>
+
+			</div>
+			<div class="form-group password">
+			  <label class="sr-only" for="password">Password</label>
+			  <div class="input-group">
+				<input type="password" class="form-control" name="pwd" id="password" ng-model="$ctrl.user.password" placeholder="Password" required>
+			  </div>
+        <p ng-show="regForm.pwd.$invalid && regForm.pwd.$dirty && !regForm.pwd.$focused" class="error">{{$ctrl.invalidPwd}}</p>
+
+			</div>
+			<div class="form-group password">
+			  <label class="sr-only" for="confirmPassword">Retype - Password</label>
+			  <div class="input-group">
+				<input type="password" class="form-control" id="confirmPassword" ng-model="$ctrl.confirmPwd" placeholder="Retype - Password" required>
+			  </div>
+        <p ng-show="$ctrl.user.password != $ctrl.confirmPwd && $ctrl.confirmPwd != ''" class="error">{{$ctrl.invalidConfirmPwd}}</p>
+
+			</div>
+				<!--<div><p ng-show="!regForm.$valid ">{{$ctrl.invalidFormSubmittion}}</p></div>-->
+			<div class="yello_btn"> <button type="submit" class="btn">Sign Up <i class="fa fa-angle-right"></i> </button></div>
+		  </form>
+			<div class="aleedy"><h3><a href="/login">Already have an account? Sign in here</a></h3></div>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+</div>

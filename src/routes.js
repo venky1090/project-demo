@@ -13,5 +13,8 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('signup', {
       url: '/signup',
       component: 'signup'
+    }).state('home', {
+      url: '/home',
+      component: 'home'
     });
 }

@@ -9,7 +9,6 @@ body, h1, h2, h3 {
 }
 
 a {
-  color: white;
   text-decoration: none;
 
   &:hover {
@@ -109,4 +108,48 @@ a {
 .tech-h3 {
   font-size: 1.5rem;
   margin: 0 0 2rem 0;
+}
+
+/*temp styles**/
+.header{
+  background: none;
+  .container-fluid{
+    width:100%;
+  }
+  .navbar{
+    margin-top: 20px;
+  }
+}
+
+.loginWrap,.signup-wrap {
+  text-align: center;
+  .form-inline{
+    text-align: center;
+    .form-group{
+      width:100%;
+      display: inline-block;
+        margin: 5px 0;
+        input[type='date']{
+           width: 196px;
+        }
+        .input-group{
+          display: inline-table;
+        }
+    }
+  }
+  .forget_pass{
+    margin-top: 10px;
+  }
+  .aleedy{
+    margin: 10px 0;
+    h3{
+      margin: 0;
+    }
+  }
+}
+
+.footer{
+  position: fixed;
+  bottom:0;
+  width:100%;
 }
